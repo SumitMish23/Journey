@@ -1,0 +1,52 @@
+.home {
+  ion-content {
+    background-color: $primary-background;
+    --padding-top: 45px;
+  }
+  ion-title {
+    color: $white;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin: 0.85rem 0;
+  }
+  ion-card {
+    background-color: $secondary-black;
+    color: white;
+    width: 100%;
+    border-radius: 1.25rem;
+    min-height: 9.25rem;
+    margin: 0.5rem 0;
+    ion-card-title {
+      font-size: 1rem;
+      color: #656565;
+      font-weight: 600;
+      text-transform: lowercase;
+    }
+
+    ion-icon {
+      &.arrow-right {
+        color: $white;
+        font-size: 1.1rem;
+        font-weight: bolder;
+      }
+    }
+
+    ion-row {
+      padding: 0.75rem 1rem;
+    }
+
+    ion-card-content {
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+  }
+  ion-card-header {
+    display: flex;
+  }
+
+  // custom classes :
+  .calendar-btn {
+    height: 25px;
+    width: 25px;
+  }
+}

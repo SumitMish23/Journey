@@ -1,0 +1,33 @@
+.fab-button {
+  ion-fab-button {
+    --background: #{$primary-fab-red};
+    --background-activated: #{$primary-fab-red};
+    --background-hover: #{$primary-fab-red};
+    --border-radius: 19px;
+    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+      0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --color: #{$white};
+    height: 68px;
+    width: 68px;
+  }
+
+  &-main {
+    margin: auto 12px 60px auto;
+  }
+  ion-fab-list {
+    margin-bottom: 135px;
+    margin-left: 6px;
+    ion-fab-button {
+      margin: 4px 0;
+
+      --border-radius: 15px;
+      height: 50px;
+      width: 50px;
+    }
+  }
+  &-main {
+    .add-btn {
+      --ionicon-stroke-width: 52px;
+    }
+  }
+}
