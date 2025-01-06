@@ -1,0 +1,27 @@
+.popup {
+  &-text {
+    color: $white;
+    font-size: 0.65rem;
+    font-weight: 650;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+    z-index: 999;
+    background-color: $primary-background;
+    border-radius: 0.15rem;
+    border: 1px solid $white;
+    padding: 0.25rem 0.35rem;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      border: 1px solid white;
+      display: block;
+      rotate: 45deg;
+      inset: auto -3.81px 7px auto;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      background-color: $primary-background;
+    }
+  }
+}

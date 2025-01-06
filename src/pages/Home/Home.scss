@@ -3,11 +3,30 @@
     background-color: $primary-background;
     --padding-top: 45px;
   }
+  &-title {
+    min-width: 80%;
+  }
   ion-title {
     color: $white;
     font-size: 1.9rem;
     font-weight: 600;
     margin: 0.85rem 0;
+  }
+
+  .no-projects {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.85rem 1rem;
+    text-align: center;
+    height: 40%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .empty-folder {
+    margin: 0 12px;
   }
   ion-card {
     background-color: $secondary-black;

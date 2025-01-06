@@ -10,17 +10,32 @@ import {
   IonCardTitle,
   IonIcon,
   IonRow,
+  IonText,
 } from "@ionic/react";
-import { chevronForwardOutline } from "ionicons/icons";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addFolder, removeFolder } from "../../redux/features/ProjectSlice";
+import { RootState } from "../../redux/store";
+import { chevronForwardOutline, folderOpenOutline } from "ionicons/icons";
 import Calendar from "../../assets/calendar.png";
 import "./Home.scss";
 
+interface Project {
+  name: string;
+  id: string;
+}
+
 const Home: React.FC = () => {
+  const projects = useSelector((state: RootState) => state.projects);
+  const dispatch = useDispatch();
+
   return (
     <IonPage className="home">
       <IonContent className="ion-padding">
         <IonRow class="ion-align-items-center">
-          <IonTitle size="large">folders</IonTitle>
+          <IonTitle class="home-title" size="large">
+            folders
+          </IonTitle>
           <IonImg
             src={Calendar}
             class="calendar-btn"
@@ -28,25 +43,43 @@ const Home: React.FC = () => {
           ></IonImg>
         </IonRow>
 
-        {new Array(25).fill(0).map(function () {
-          return (
-            <IonCard>
-              <IonCardHeader>
-                <IonRow class="ion-justify-content-between">
-                  <IonCardTitle>Card Title</IonCardTitle>
-                  <IonCardSubtitle>
-                    <IonIcon
-                      className="arrow-right"
-                      icon={chevronForwardOutline}
-                    />
-                  </IonCardSubtitle>
-                </IonRow>
-              </IonCardHeader>
+        {/*  Show all projects available */}
+        {projects.length &&
+          projects.map(function (item) {
+            return (
+              <IonCard
+                routerLink="/folders/1"
+                routerDirection="root"
+                key={item.id}
+              >
+                <IonCardHeader>
+                  <IonRow class="ion-justify-content-between">
+                    <IonCardTitle>{item.name}</IonCardTitle>
+                    <IonCardSubtitle>
+                      <IonIcon
+                        className="arrow-right"
+                        icon={chevronForwardOutline}
+                      />
+                    </IonCardSubtitle>
+                  </IonRow>
+                </IonCardHeader>
 
-              <IonCardContent>{Math.floor(Math.random() * 100)}</IonCardContent>
-            </IonCard>
-          );
-        })}
+                <IonCardContent>
+                  {Math.floor(Math.random() * 100)}
+                </IonCardContent>
+              </IonCard>
+            );
+          })}
+
+        {/* No Projects  */}
+        {!projects.length && (
+          <>
+            <IonText class="no-projects">
+              No folders available !!
+              <IonIcon className="empty-folder" icon={folderOpenOutline} />
+            </IonText>
+          </>
+        )}
       </IonContent>
     </IonPage>
   );

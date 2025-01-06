@@ -3,5 +3,19 @@ Intialization Phase :
 1. SHOW FAB BUTTON | DONE
 2. INITIALIZE CSS FILES | DONE
 
-3. CREATE FOLDER CSS |
-4. FINE TUNE BUTTON ( FAB )  | 
+3. CREATE FOLDER CSS | DONE
+4. FINE TUNE BUTTON ( FAB )  | DONE
+
+Mid Phase 
+
+1. CREATE ADD JORUNAL | 
+2. SYCN JOURNAL IN HOME PAGE | 
+
+
+
+
+
+
+Home page has folder icons & menus 
+User can create a folder from homepage which has multiple journals in it 
+folde page will have option for creating a new journal
